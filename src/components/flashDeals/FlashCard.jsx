@@ -49,7 +49,7 @@ const FlashCard = ({productItems, addToCart}) => {
         {productItems.map((productItems)=>{
 
             return(
-                <div className="box">
+                <div className="box" key={productItems.id}>
                     
                     <div className="product mtop">
                         <div className="img">
@@ -57,7 +57,7 @@ const FlashCard = ({productItems, addToCart}) => {
                             <img src={productItems.cover} alt="" />
                             <div className="product-like">
                                 <label>{count}</label> <br/>
-                                <i class="fa-regular fa-heart" onClick={increment}></i>
+                                <i className="fa-regular fa-heart" onClick={increment}></i>
                             </div>
                         </div>
 
@@ -73,7 +73,7 @@ const FlashCard = ({productItems, addToCart}) => {
                             </div>
                             <div className="price">
                                 <h4>{productItems.price}.00</h4>
-                                <button className='' onClick={addToCart}>
+                                <button onClick={() => addToCart(productItems)}>
                                     <i className='fa fa-plus'></i>
                                 </button>
                             </div>
