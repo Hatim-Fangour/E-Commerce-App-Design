@@ -9,7 +9,7 @@ const SlideCard = () => {
 
     const settings = {
       dots: true,
-      infinite: true,
+      infinite: false,
       speed: 400,
       slidesToShow: 1,
       slidesToScroll: 1,
@@ -23,22 +23,22 @@ const SlideCard = () => {
   return (
     <>
      <Slider {...settings}>
-    {Sdata.map((value, index)=>{
-      return (
-        
-        <div className="box d_flex top" key={index}>
-          <div className="left">
-            <h1>{value.title}</h1>
-            <p>{value.desc}</p>
-            <button className='btn-primary'>Visit Collections</button>
-          </div>
+        {Sdata.map((value, index)=>{
+          return (
+            
+            <div className="box d_flex top" key={index}>
+              <div className="left">
+                <h1>{value.title}</h1>
+                <p>{value.desc}</p>
+                <button className='btn-primary'>Visit Collections</button>
+              </div>
 
-          <div className="right">
-            <img src={value.cover} alt="" />
+              <div className="right">
+                <img src={value.cover} alt="" />
+              </div>
           </div>
-       </div>
-        )
-      })}
+            )
+          })}
       </Slider>
     </>
   )
